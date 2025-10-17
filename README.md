@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UI Universe Card</title>
+  <title>UI Universe Card (Website Style)</title>
   <style>
-    /* From Uiverse.io by Smit-Prajapati */
+    /* From Uiverse.io by Smit-Prajapati | Modified for full website look */
     body {
       background: #111827;
       display: flex;
@@ -13,26 +13,27 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", Arial, sans-serif;
     }
 
     .card {
-      width: 230px;
-      border-radius: 20px;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 25px;
       background: #1b233d;
-      padding: 5px;
+      padding: 20px;
       overflow: hidden;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+      box-shadow: rgba(100, 100, 111, 0.25) 0px 10px 30px 0px;
       transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
 
     .card .top-section {
-      height: 150px;
-      border-radius: 15px;
+      height: 250px;
+      border-radius: 20px;
       display: flex;
       flex-direction: column;
       background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
@@ -40,59 +41,56 @@
     }
 
     .card .top-section .border {
-      border-bottom-right-radius: 10px;
-      height: 30px;
-      width: 130px;
+      border-bottom-right-radius: 15px;
+      height: 50px;
+      width: 250px;
       background: #1b233d;
       position: relative;
       transform: skew(-40deg);
-      box-shadow: -10px -10px 0 0 #1b233d;
+      box-shadow: -15px -15px 0 0 #1b233d;
     }
 
     .card .top-section .border::before {
       content: "";
       position: absolute;
-      width: 15px;
-      height: 15px;
+      width: 25px;
+      height: 25px;
       top: 0;
-      right: -15px;
-      background: rgba(255, 255, 255, 0);
-      border-top-left-radius: 10px;
-      box-shadow: -5px -5px 0 2px #1b233d;
+      right: -25px;
+      border-top-left-radius: 15px;
+      box-shadow: -8px -8px 0 2px #1b233d;
     }
 
     .card .top-section::before {
       content: "";
       position: absolute;
-      top: 30px;
+      top: 50px;
       left: 0;
-      background: rgba(255, 255, 255, 0);
-      height: 15px;
-      width: 15px;
-      border-top-left-radius: 15px;
-      box-shadow: -5px -5px 0 2px #1b233d;
+      height: 25px;
+      width: 25px;
+      border-top-left-radius: 20px;
+      box-shadow: -8px -8px 0 2px #1b233d;
     }
 
     .card .top-section .icons {
       position: absolute;
       top: 0;
       width: 100%;
-      height: 30px;
+      height: 60px;
       display: flex;
       justify-content: space-between;
     }
 
     .card .top-section .icons .logo {
       height: 100%;
-      aspect-ratio: 1;
-      padding: 7px 0 7px 15px;
+      padding: 10px 0 10px 25px;
     }
 
     .card .top-section .icons .social-media {
       height: 100%;
-      padding: 8px 15px;
+      padding: 12px 25px;
       display: flex;
-      gap: 7px;
+      gap: 15px;
     }
 
     .card .top-section .icons .social-media .svg {
@@ -107,44 +105,71 @@
     }
 
     .card .bottom-section {
-      margin-top: 15px;
-      padding: 10px 5px;
+      margin-top: 25px;
+      padding: 20px 10px;
     }
 
     .card .bottom-section .title {
       display: block;
-      font-size: 17px;
-      font-weight: bolder;
+      font-size: 32px;
+      font-weight: 700;
       color: white;
       text-align: center;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
     .card .bottom-section .row {
       display: flex;
       justify-content: space-between;
-      margin-top: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
     }
 
     .card .bottom-section .row .item {
-      flex: 30%;
+      flex: 1;
       text-align: center;
-      padding: 5px;
-      color: rgba(170, 222, 243, 0.721);
+      padding: 10px;
+      color: rgba(170, 222, 243, 0.9);
+      min-width: 150px;
     }
 
     .card .bottom-section .row .item .big-text {
-      font-size: 12px;
+      font-size: 24px;
       display: block;
+      font-weight: 600;
     }
 
     .card .bottom-section .row .item .regular-text {
-      font-size: 9px;
+      font-size: 14px;
     }
 
     .card .bottom-section .row .item:nth-child(2) {
-      border-left: 1px solid rgba(255, 255, 255, 0.126);
-      border-right: 1px solid rgba(255, 255, 255, 0.126);
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 95%;
+      }
+
+      .card .top-section {
+        height: 200px;
+      }
+
+      .card .bottom-section .title {
+        font-size: 24px;
+      }
+
+      .card .bottom-section .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .card .bottom-section .row .item:nth-child(2) {
+        border: none;
+      }
     }
   </style>
 </head>
@@ -177,12 +202,12 @@
       <span class="title">UNIVERSE OF UI</span>
       <div class="row row1">
         <div class="item">
-          <span class="big-text">2626</span>
-          <span class="regular-text">UI elements</span>
+          <span class="big-text">2,626</span>
+          <span class="regular-text">UI Elements</span>
         </div>
         <div class="item">
           <span class="big-text">100%</span>
-          <span class="regular-text">Free for use</span>
+          <span class="regular-text">Free for Use</span>
         </div>
         <div class="item">
           <span class="big-text">38,631</span>
