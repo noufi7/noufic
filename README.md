@@ -197,7 +197,7 @@
 </head>
 <body>
   <header>
-    <img src="your-photo.jpg" alt="Your Photo" />
+    <img src="images/noufipic.png" alt="Your Photo" />
     <h1>Muhammed Noufal</h1>
     <p>IT Developer • Designer • Traveler</p>
   </header>
