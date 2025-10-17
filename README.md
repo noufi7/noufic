@@ -198,8 +198,8 @@
 <body>
   <header>
     <img src="your-photo.jpg" alt="Your Photo" />
-    <h1>Your Name</h1>
-    <p>Web Developer • Designer • Traveler</p>
+    <h1>Muhammed Noufal</h1>
+    <p>IT Developer • Designer • Traveler</p>
   </header>
 
   <nav>
@@ -215,7 +215,7 @@
       <img src="about-pic.jpg" alt="About me picture">
       <div class="about-text">
         <p>
-          Hi! I'm <b>Your Name</b>, a passionate web developer who loves building
+          Hi! I'm <b>Muhammed Noufal</b>, a passionate IT developer who loves building
           beautiful and functional websites. I enjoy creating modern designs, learning new technologies, and exploring the world through travel and photography.
         </p>
       </div>
@@ -274,7 +274,7 @@
   </section>
 
   <footer>
-    © 2025 Your Name. All rights reserved.
+    © 2025 Noufal. All rights reserved.
   </footer>
 </body>
 </html>
