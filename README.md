@@ -1,587 +1,178 @@
+<style scoped>
+  .card {
+    width: 230px;
+    border-radius: 20px;
+    background: #1b233d;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card .top-section {
+    height: 150px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+    position: relative;
+  }
+
+  .card .top-section .border {
+    border-bottom-right-radius: 10px;
+    height: 30px;
+    width: 130px;
+    background: white;
+    background: #1b233d;
+    position: relative;
+    transform: skew(-40deg);
+    box-shadow: -10px -10px 0 0 #1b233d;
+  }
+
+  .card .top-section .border::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    right: -15px;
+    background: rgba(255, 255, 255, 0);
+    border-top-left-radius: 10px;
+    box-shadow: -5px -5px 0 2px #1b233d;
+  }
+
+  .card .top-section::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: rgba(255, 255, 255, 0);
+    height: 15px;
+    width: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: -5px -5px 0 2px #1b233d;
+  }
+
+  .card .top-section .icons {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card .top-section .icons .logo {
+    height: 100%;
+    aspect-ratio: 1;
+    padding: 7px 0 7px 15px;
+  }
+
+  .card .top-section .icons .logo .top-section {
+    height: 100%;
+  }
+
+  .card .top-section .icons .social-media {
+    height: 100%;
+    padding: 8px 15px;
+    display: flex;
+    gap: 7px;
+  }
+
+  .card .top-section .icons .social-media .svg {
+    height: 100%;
+    fill: #1b233d;
+  }
+
+  .card .top-section .icons .social-media .svg:hover {
+    fill: white;
+  }
+
+  .card .bottom-section {
+    margin-top: 15px;
+    padding: 10px 5px;
+  }
+
+  .card .bottom-section .title {
+    display: block;
+    font-size: 17px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .card .bottom-section .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .card .bottom-section .row .item {
+    flex: 30%;
+    text-align: center;
+    padding: 5px;
+    color: rgba(170, 222, 243, 0.721);
+  }
+
+  .card .bottom-section .row .item .big-text {
+    font-size: 12px;
+    display: block;
+  }
+
+  .card .bottom-section .row .item .regular-text {
+    font-size: 9px;
+  }
+
+  .card .bottom-section .row .item:nth-child(2) {
+    border-left: 1px solid rgba(255, 255, 255, 0.126);
+    border-right: 1px solid rgba(255, 255, 255, 0.126);
+  }
+</style>
+
 <template>
-  <div class="inset-0 overflow-hidden pointer-events-none">
-    <div
-      class="absolute top-0 left-10 w-96 h-96 bg-indigo-900/10 rounded-full blur-3xl animate-pulse"
-    ></div>
-    <div
-      class="absolute bottom-10 right-10 w-80 h-80 bg-purple-900/10 rounded-full blur-3xl animate-pulse"
-    ></div>
-    <div
-      class="absolute top-40 right-20 w-64 h-64 bg-cyan-900/10 rounded-full blur-3xl animate-pulse"
-    ></div>
-
-    <div class="absolute inset-0 grid grid-cols-12 opacity-5 pointer-events-none">
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
-      <div class="border-r border-cyan-500"></div>
+  <div class="card">
+    <div class="top-section">
+      <div class="border"></div>
+      <div class="icons">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 94 94" class="svg">
+            <path fill="white" d="M38.0481 4.82927C38.0481 2.16214 40.018 0 42.4481 0H51.2391C53.6692 0 55.6391 2.16214 55.6391 4.82927V40.1401C55.6391 48.8912 53.2343 55.6657 48.4248 60.4636C43.6153 65.2277 36.7304 67.6098 27.7701 67.6098C18.8099 67.6098 11.925 65.2953 7.11548 60.6663C2.37183 56.0036 3.8147e-06 49.2967 3.8147e-06 40.5456V4.82927C3.8147e-06 2.16213 1.96995 0 4.4 0H13.2405C15.6705 0 17.6405 2.16214 17.6405 4.82927V39.1265C17.6405 43.7892 18.4805 47.2018 20.1605 49.3642C21.8735 51.5267 24.4759 52.6079 27.9678 52.6079C31.4596 52.6079 34.0127 51.5436 35.6268 49.4149C37.241 47.2863 38.0481 43.8399 38.0481 39.0758V4.82927Z"></path>
+            <path fill="white" d="M86.9 61.8682C86.9 64.5353 84.9301 66.6975 82.5 66.6975H73.6595C71.2295 66.6975 69.2595 64.5353 69.2595 61.8682V4.82927C69.2595 2.16214 71.2295 0 73.6595 0H82.5C84.9301 0 86.9 2.16214 86.9 4.82927V61.8682Z"></path>
+            <path fill="white" d="M2.86102e-06 83.2195C2.86102e-06 80.5524 1.96995 78.3902 4.4 78.3902H83.6C86.0301 78.3902 88 80.5524 88 83.2195V89.1707C88 91.8379 86.0301 94 83.6 94H4.4C1.96995 94 0 91.8379 0 89.1707L2.86102e-06 83.2195Z"></path>
+          </svg>
+        </div>
+        <div class="social-media">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="svg">
+            <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
+          </svg>
+          <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+          </svg>
+          <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+            <path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path>
+          </svg>
+        </div>
+      </div>
     </div>
-    <div class="absolute inset-0 grid grid-rows-12 opacity-5 pointer-events-none">
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-      <div class="border-b border-cyan-500"></div>
-    </div>
-  </div>
-
-  <div
-    class="relative w-full max-w-xl bg-gradient-to-b from-gray-900/90 to-black/95 backdrop-blur-lg rounded-xl border border-indigo-500/40 shadow-lg shadow-indigo-500/20 overflow-hidden group"
-  >
-    <div
-      class="h-1 w-full bg-gradient-to-r from-cyan-500 via-purple-500 to-indigo-500 group-hover:from-indigo-500 group-hover:via-purple-500 group-hover:to-cyan-500 transition-all duration-1000"
-    ></div>
-
-    <div
-      class="absolute top-0 left-0 w-4 h-4 border-t border-l border-cyan-500/40"
-    ></div>
-    <div
-      class="absolute top-0 right-0 w-4 h-4 border-t border-r border-purple-500/40"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-purple-500/40"
-    ></div>
-    <div
-      class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-cyan-500/40"
-    ></div>
-
-    <div class="absolute left-0 w-full h-[1px] bg-cyan-400/20 opacity-50"></div>
-
-    <div class="p-5 relative z-10">
-      <div class="flex items-center justify-between mb-5">
-        <div class="flex items-center gap-2.5">
-          <div class="relative">
-            <div
-              class="absolute inset-0 bg-indigo-600/30 rounded-md blur-sm"
-            ></div>
-            <div
-              class="w-10 h-10 rounded-md bg-gradient-to-br from-indigo-600 to-purple-600 border border-indigo-400/30 flex items-center justify-center relative shadow-lg shadow-indigo-800/20"
-            >
-              <div
-                class="absolute inset-[3px] bg-gray-900 rounded-[4px] flex items-center justify-center overflow-hidden"
-              >
-                <div
-                  class="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20"
-                ></div>
-                <div
-                  class="font-bold text-sm bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent"
-                >
-                  QX
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="text-xs text-indigo-300/80 tracking-widest font-light">
-              QUANTUM NEXUS
-            </div>
-            <div
-              class="text-sm font-semibold bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent flex items-center"
-            >
-              AI ENGINE
-              <span class="ml-1.5 text-xs font-mono text-cyan-500/80 font-normal"
-                >v9.7.2</span
-              >
-            </div>
-          </div>
+    <div class="bottom-section">
+      <span class="title">UNIVERSE OF UI</span>
+      <div class="row row1">
+        <div class="item">
+          <span class="big-text">2626</span>
+          <span class="regular-text">UI elements</span>
         </div>
-
-        <div class="flex items-center gap-3">
-          <div class="flex flex-col items-end">
-            <div class="flex items-center">
-              <div
-                class="w-1.5 h-1.5 rounded-full bg-green-400 mr-1.5 animate-pulse"
-              ></div>
-              <span class="text-xs text-gray-400 font-medium tracking-wide"
-                >ONLINE</span
-              >
-            </div>
-            <div class="text-[8px] text-cyan-500/70 font-mono">
-              SYNAPSE ACTIVE
-            </div>
-          </div>
+        <div class="item">
+          <span class="big-text">100%</span>
+          <span class="regular-text">Free for use</span>
         </div>
-      </div>
-
-      <div class="mb-4 flex justify-between items-center">
-        <div class="flex gap-3 text-[9px] text-gray-500 font-mono">
-          <div class="flex items-center gap-1">
-            <div
-              class="w-4 h-1 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-sm"
-            ></div>
-            <span>QUANTUM CORES: 64</span>
-          </div>
-          <div class="flex items-center gap-1">
-            <div
-              class="w-4 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-sm"
-            ></div>
-            <span>NEURAL DENSITY: 9.4T</span>
-          </div>
-        </div>
-        <div class="text-[9px] text-gray-500 font-mono">
-          MARCH 24, 2025 • LOCAL SYS
-        </div>
-      </div>
-
-      <div class="flex flex-wrap gap-1.5 mb-4">
-        <div class="relative group cursor-pointer">
-          <div
-            class="absolute inset-0 bg-indigo-500/20 rounded blur-sm group-hover:bg-indigo-500/30 transition-all"
-          ></div>
-          <div
-            class="px-3 py-1 rounded bg-indigo-900/40 border border-indigo-500/50 text-indigo-300 text-xs relative z-10 flex items-center gap-1.5 group-hover:bg-indigo-800/50 group-hover:border-indigo-400/70 transition-all"
-          >
-            <span
-              class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"
-            ></span>
-            Neural-X Pro
-          </div>
-        </div>
-
-        <div class="relative group cursor-pointer">
-          <div
-            class="px-3 py-1 rounded bg-gray-800/40 border border-gray-700/50 text-gray-400 text-xs relative z-10 flex items-center gap-1.5 hover:bg-gray-800/60 hover:border-gray-600/60 transition-all"
-          >
-            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-            Quantum Mesh
-          </div>
-        </div>
-
-        <div class="relative group cursor-pointer">
-          <div
-            class="px-3 py-1 rounded bg-gray-800/40 border border-gray-700/50 text-gray-400 text-xs relative z-10 flex items-center gap-1.5 hover:bg-gray-800/60 hover:border-gray-600/60 transition-all"
-          >
-            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-            BioSynth
-          </div>
-        </div>
-
-        <div class="relative group cursor-pointer">
-          <div
-            class="px-3 py-1 rounded bg-gray-800/40 border border-gray-700/50 text-gray-400 text-xs relative z-10 flex items-center gap-1.5 hover:bg-gray-800/60 hover:border-gray-600/60 transition-all"
-          >
-            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-            Delta-4
-          </div>
-        </div>
-      </div>
-
-      <div class="relative mb-4 group">
-        <div
-          class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600/20 via-purple-600/20 to-cyan-600/20 rounded-lg blur-sm opacity-50 group-hover:opacity-70 transition-all duration-500"
-        ></div>
-
-        <div class="relative">
-          <textarea
-            class="w-full h-28 bg-gray-900/70 border border-indigo-500/30 rounded-lg p-4 focus:outline-none focus:border-cyan-400/70 focus:ring-1 focus:ring-cyan-500/50 placeholder-gray-500 text-gray-200 resize-none relative z-10 font-light text-sm backdrop-blur-sm"
-            placeholder="Ask Quantum Nexus anything..."
-          ></textarea>
-
-          <div
-            class="absolute inset-0 overflow-hidden pointer-events-none rounded-lg opacity-30"
-          >
-            <div class="absolute inset-x-0 top-0 h-px bg-cyan-400/50"></div>
-          </div>
-
-          <div class="absolute bottom-3 right-3 flex items-center space-x-2">
-            <div class="text-xs text-cyan-500/80 font-mono">READY</div>
-            <div class="flex items-center space-x-0.5">
-              <div class="w-1 h-1 rounded-full bg-cyan-400 opacity-30"></div>
-              <div class="w-1 h-1 rounded-full bg-cyan-400 opacity-60"></div>
-              <div class="w-1 h-1 rounded-full bg-cyan-400 opacity-90"></div>
-            </div>
-          </div>
-
-          <div class="absolute bottom-3 left-3 text-xs text-gray-500 font-mono">
-            0/4096
-          </div>
-        </div>
-      </div>
-
-      <div class="flex space-x-0.5 mb-4 text-[10px] font-medium">
-        <div
-          class="px-3 py-1 bg-cyan-900/30 text-cyan-400 rounded-t border-t border-l border-r border-cyan-500/40 relative"
-        >
-          <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-cyan-500"></div>
-          ASSISTANT
-        </div>
-        <div
-          class="px-3 py-1 bg-gray-800/30 text-gray-400 rounded-t border-t border-l border-r border-gray-700/20 hover:bg-gray-800/40 hover:text-gray-300 transition-colors cursor-pointer"
-        >
-          CODE
-        </div>
-        <div
-          class="px-3 py-1 bg-gray-800/30 text-gray-400 rounded-t border-t border-l border-r border-gray-700/20 hover:bg-gray-800/40 hover:text-gray-300 transition-colors cursor-pointer"
-        >
-          CREATIVE
-        </div>
-        <div
-          class="px-3 py-1 bg-gray-800/30 text-gray-400 rounded-t border-t border-l border-r border-gray-700/20 hover:bg-gray-800/40 hover:text-gray-300 transition-colors cursor-pointer"
-        >
-          ANALYSIS
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center mb-4">
-        <div class="flex gap-1.5">
-          <div class="relative group cursor-pointer">
-            <div
-              class="absolute inset-0 bg-indigo-500/10 rounded blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity"
-            ></div>
-            <div
-              class="px-3 py-1.5 bg-gray-800/70 rounded text-gray-300 text-xs border border-indigo-500/30 flex items-center gap-1.5 relative z-10 group-hover:border-indigo-500/50 transition-all duration-300"
-            >
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                class="h-3 w-3 text-indigo-400"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                  fill-rule="evenodd"
-                ></path>
-              </svg>
-              Boost Synapse
-            </div>
-          </div>
-
-          <div class="relative group cursor-pointer">
-            <div
-              class="absolute inset-0 bg-purple-500/10 rounded blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity"
-            ></div>
-            <div
-              class="px-3 py-1.5 bg-gray-800/70 rounded text-gray-300 text-xs border border-purple-500/30 flex items-center gap-1.5 relative z-10 group-hover:border-purple-500/50 transition-all duration-300"
-            >
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                class="h-3 w-3 text-purple-400"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z"
-                ></path>
-                <path
-                  d="M3 8a2 2 0 012-2h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"
-                ></path>
-              </svg>
-              Clone Output
-            </div>
-          </div>
-        </div>
-
-        <div class="relative group cursor-pointer">
-          <div
-            class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600/50 to-purple-600/50 rounded-lg blur opacity-75 group-hover:opacity-100 transition-all duration-500"
-          ></div>
-
-          <button
-            class="px-5 py-2 bg-gradient-to-r from-indigo-900/90 to-purple-900/90 rounded-lg text-white text-xs font-medium relative z-10 flex items-center justify-center gap-2 group-hover:from-indigo-800/90 group-hover:to-purple-800/90 transition-all duration-300 transform group-hover:scale-105 group-active:scale-95"
-          >
-            <span
-              class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent"
-              >GENERATE</span
-            >
-            <svg
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              class="h-3.5 w-3.5 text-indigo-400"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-3 gap-2 mb-4">
-        <div class="relative group cursor-pointer">
-          <div
-            class="absolute inset-0 bg-indigo-500/5 rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity"
-          ></div>
-
-          <div
-            class="bg-gradient-to-br from-gray-900 to-gray-950 border border-indigo-500/20 rounded-lg p-2 relative z-10 h-full group-hover:border-indigo-500/40 transition-all duration-300"
-          >
-            <div class="flex flex-col h-full">
-              <div class="flex items-center mb-1.5">
-                <div
-                  class="w-6 h-6 rounded bg-indigo-900/60 flex items-center justify-center mr-2 group-hover:bg-indigo-800/70 transition-colors"
-                >
-                  <svg
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    class="h-3 w-3 text-indigo-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="font-medium text-xs text-indigo-300 group-hover:text-indigo-200 transition-colors"
-                >
-                  Neural Core
-                </div>
-              </div>
-
-              <div class="mt-auto space-y-1">
-                <div
-                  class="flex items-center justify-between text-[8px] text-gray-500"
-                >
-                  <span>EFFICIENCY</span>
-                  <span>98.7%</span>
-                </div>
-                <div class="w-full h-1 bg-gray-800 rounded overflow-hidden">
-                  <div
-                    class="h-full w-[98%] bg-gradient-to-r from-indigo-500 to-indigo-300 rounded"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative group cursor-pointer">
-          <div
-            class="absolute inset-0 bg-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity"
-          ></div>
-
-          <div
-            class="bg-gradient-to-br from-gray-900 to-gray-950 border border-purple-500/20 rounded-lg p-2 relative z-10 h-full group-hover:border-purple-500/40 transition-all duration-300"
-          >
-            <div class="flex flex-col h-full">
-              <div class="flex items-center mb-1.5">
-                <div
-                  class="w-6 h-6 rounded bg-purple-900/60 flex items-center justify-center mr-2 group-hover:bg-purple-800/70 transition-colors"
-                >
-                  <svg
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    class="h-3 w-3 text-purple-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                      fill-rule="evenodd"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="font-medium text-xs text-purple-300 group-hover:text-purple-200 transition-colors"
-                >
-                  Code Matrix
-                </div>
-              </div>
-
-              <div class="mt-auto space-y-1">
-                <div
-                  class="flex items-center justify-between text-[8px] text-gray-500"
-                >
-                  <span>LANGS</span>
-                  <span>24/24</span>
-                </div>
-                <div class="w-full h-1 bg-gray-800 rounded overflow-hidden">
-                  <div
-                    class="h-full w-full bg-gradient-to-r from-purple-500 to-purple-300 rounded"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative group cursor-pointer">
-          <div
-            class="absolute inset-0 bg-cyan-500/5 rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity"
-          ></div>
-
-          <div
-            class="bg-gradient-to-br from-gray-900 to-gray-950 border border-cyan-500/20 rounded-lg p-2 relative z-10 h-full group-hover:border-cyan-500/40 transition-all duration-300"
-          >
-            <div class="flex flex-col h-full">
-              <div class="flex items-center mb-1.5">
-                <div
-                  class="w-6 h-6 rounded bg-cyan-900/60 flex items-center justify-center mr-2 group-hover:bg-cyan-800/70 transition-colors"
-                >
-                  <svg
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    class="h-3 w-3 text-cyan-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                      fill-rule="evenodd"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="font-medium text-xs text-cyan-300 group-hover:text-cyan-200 transition-colors"
-                >
-                  Q-Processing
-                </div>
-              </div>
-
-              <div class="mt-auto space-y-1">
-                <div
-                  class="flex items-center justify-between text-[8px] text-gray-500"
-                >
-                  <span>QUBITS</span>
-                  <span>128/128</span>
-                </div>
-                <div class="w-full h-1 bg-gray-800 rounded overflow-hidden">
-                  <div
-                    class="h-full w-full bg-gradient-to-r from-cyan-500 to-cyan-300 rounded"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="relative mb-4 overflow-hidden rounded-lg h-24 bg-gray-900/40 border border-gray-800/40 group cursor-pointer"
-      >
-        <div
-          class="absolute inset-0 bg-indigo-500/5 opacity-50 group-hover:opacity-100 transition-opacity"
-        ></div>
-
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="relative w-full h-full p-2">
-            <div class="flex items-end h-full justify-around">
-              <div
-                class="w-0.5 h-[20%] bg-indigo-500/50 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[65%] bg-indigo-500/40 rounded-t"></div>
-              <div
-                class="w-0.5 h-[45%] bg-indigo-500/60 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[80%] bg-indigo-500/50 rounded-t"></div>
-              <div
-                class="w-0.5 h-[35%] bg-indigo-500/40 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[55%] bg-indigo-500/60 rounded-t"></div>
-              <div
-                class="w-0.5 h-[70%] bg-indigo-500/50 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[25%] bg-indigo-500/40 rounded-t"></div>
-              <div
-                class="w-0.5 h-[60%] bg-indigo-500/60 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[40%] bg-indigo-500/50 rounded-t"></div>
-              <div
-                class="w-0.5 h-[75%] bg-indigo-500/40 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[30%] bg-indigo-500/60 rounded-t"></div>
-              <div
-                class="w-0.5 h-[50%] bg-indigo-500/50 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[85%] bg-indigo-500/40 rounded-t"></div>
-              <div
-                class="w-0.5 h-[45%] bg-indigo-500/60 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[65%] bg-indigo-500/50 rounded-t"></div>
-              <div
-                class="w-0.5 h-[20%] bg-indigo-500/40 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[70%] bg-indigo-500/60 rounded-t"></div>
-              <div
-                class="w-0.5 h-[40%] bg-indigo-500/50 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[60%] bg-indigo-500/40 rounded-t"></div>
-              <div
-                class="w-0.5 h-[80%] bg-indigo-500/60 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[30%] bg-indigo-500/50 rounded-t"></div>
-              <div
-                class="w-0.5 h-[55%] bg-indigo-500/40 rounded-t animate-pulse"
-              ></div>
-              <div class="w-0.5 h-[75%] bg-indigo-500/60 rounded-t"></div>
-            </div>
-
-            <div class="absolute inset-0 flex items-center">
-              <div class="w-full h-px bg-cyan-500/20"></div>
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-full h-px bg-purple-500/20"></div>
-            </div>
-
-            <div
-              class="absolute top-1/4 left-1/3 w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
-            ></div>
-            <div
-              class="absolute top-1/2 left-2/3 w-1 h-1 bg-purple-400 rounded-full"
-            ></div>
-            <div
-              class="absolute top-3/4 left-1/4 w-1 h-1 bg-indigo-400 rounded-full animate-pulse"
-            ></div>
-          </div>
-        </div>
-
-        <div class="absolute top-2 left-3 text-[8px] font-mono text-cyan-500/90">
-          NEURAL ACTIVITY VISUALIZATION
-        </div>
-        <div
-          class="absolute bottom-2 right-3 text-[8px] font-mono text-cyan-500/70 animate-pulse"
-        >
-          ACTIVE MONITORING
-        </div>
-      </div>
-
-      <div
-        class="flex justify-between items-center border-t border-gray-800/70 pt-3 px-0.5"
-      >
-        <div class="flex items-center gap-3">
-          <div class="flex items-center gap-1.5">
-            <div class="flex space-x-0.5">
-              <div
-                class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"
-              ></div>
-              <div class="w-1.5 h-1.5 rounded-full bg-green-500/70"></div>
-              <div class="w-1.5 h-1.5 rounded-full bg-green-500/40"></div>
-            </div>
-            <span class="text-[10px] text-gray-400 font-medium"
-              >SYSTEM OPTIMAL</span
-            >
-          </div>
-          <div class="text-[10px] font-mono text-gray-500">
-            MEM: 128.7<span class="text-cyan-500">TB</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-3">
-          <div class="text-[10px] font-mono text-gray-500">
-            LAT: <span class="text-green-500">1.2ms</span>
-          </div>
-          <div class="text-[10px] font-mono text-gray-500">
-            QN-<span class="text-cyan-500">9.7.254</span>
-          </div>
+        <div class="item">
+          <span class="big-text">38,631</span>
+          <span class="regular-text">Contributers</span>
         </div>
       </div>
     </div>
