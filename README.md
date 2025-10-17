@@ -23,10 +23,10 @@
     }
 
     header img {
-      width: 150px;
-      height: 150px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
-      border: 5px solid #1b233d;
+      border: 4px solid #1b233d;
       object-fit: cover;
       margin-bottom: 20px;
     }
