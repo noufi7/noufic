@@ -244,8 +244,8 @@
       <div class="project-card">
         <img src="project3.jpg" alt="Project 3">
         <div class="info">
-          <h3>UI Design Kit</h3>
-          <p>A clean and modern UI kit built for developers.</p>
+          <h3>Passion for Sports</h3>
+          <p>Staying active through games that build focus, teamwork, and strategy.</p>
         </div>
       </div>
     </div>
