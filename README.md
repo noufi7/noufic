@@ -212,7 +212,7 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="about">
-      <img src="about-pic.jpg" alt="About me picture">
+      <img src="images/nofpic1.png" alt="About me picture">
       <div class="about-text">
         <p>
           Hi! I'm <b>Muhammed Noufal</b>, a passionate IT developer who loves building
