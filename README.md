@@ -131,6 +131,20 @@
       color: rgb(80, 246, 255);
     }
 
+.project-card a {
+  text-decoration: none;
+  color: inherit; /* keeps your original color */
+  display: block;
+}
+
+.project-card a:visited {
+  color: inherit; /* fixes purple visited link color */
+}
+
+.project-card a:hover h3 {
+  color: #00ffe7; /* subtle hover glow effect (optional) */
+  transition: color 0.3s ease;
+}
     /* === TRAVEL SECTION === */
     .travel-gallery {
       display: grid;
