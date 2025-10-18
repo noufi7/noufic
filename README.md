@@ -228,7 +228,7 @@
       <div class="project-card">
         <img src="project1.jpg" alt="Project 1">
         <div class="info">
-            <h3><a href="pages/skills.html">Portfolio Website</a></h3>
+            <h3><a href="skills.html">Portfolio Website</a></h3>
           <p>A personal website showcasing my skills and projects.</p>
         </div>
       </div>
