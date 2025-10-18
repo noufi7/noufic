@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills & Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(45deg, #009dff, #00ffe7);
+      color: #0f172a;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    section {
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #80eaff;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    /* Skill Cards */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #1b233d;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+    }
+
+    .skill-card h3 {
+      color: #00ffe7;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: #b0c7d1;
+      font-size: 0.9rem;
+    }
+
+    /* Project Cards */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background: #1b233d;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card .info {
+      padding: 15px;
+    }
+
+    .project-card h3 {
+      color: #00ffe7;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #b0c7d1;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #8aa0b6;
+    }
+
+    a.back-home {
+      color: #00ffe7;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>My Skills & Projects</header>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-card">
+        <h3>Accounting & Office</h3>
+        <p>Financial reporting, Excel dashboards, and data analysis using advanced Excel tools and formulas.</p>
+      </div>
+      <div class="skill-card">
+        <h3>IT Administration</h3>
+        <p>Experience with system setup, network troubleshooting, and hardware maintenance.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Web Design</h3>
+        <p>Building modern responsive websites using HTML, CSS, and GitHub Pages.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Communication & Teamwork</h3>
+        <p>Strong collaboration, leadership, and presentation skills developed through sports and projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="images/portfolio.jpg" alt="Portfolio Website">
+        <div class="info">
+          <h3>Portfolio Website</h3>
+          <p>Designed and built this personal portfolio to showcase my skills, projects, and achievements.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/excel.jpg" alt="Excel Dashboard">
+        <div class="info">
+          <h3>Finance Dashboard</h3>
+          <p>Created an Excel dashboard to visualize monthly income and expenses with charts.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/network.jpg" alt="Network Setup">
+        <div class="info">
+          <h3>Network Setup</h3>
+          <p>Configured an office network including routers, printers, and shared drives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Noufal | All Rights Reserved</p>
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </footer>
+</body>
+</html>
